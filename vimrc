@@ -264,3 +264,4 @@ elseif has("gui_win32")
     set guifont=DejaVu_Sans_Mono:h12
 end
 
+nmap <Leader>r :tabedit $MYVIMRC<CR>
