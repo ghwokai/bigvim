@@ -1,0 +1,31 @@
+" in order to make your local setting works
+" copy this file and rename it as vimrc.local
+" add your vimrc configurations here
+"==================================================
+"  general sets 
+"==================================================
+set mouse=a 
+set wrap
+"set font
+if has("gui_gtk2")
+    set guifont=DejaVu\ Sans\ Mono\ 12
+elseif has("gui_win32")
+    set guifont=DejaVu_Sans_Mono:h12
+end
+"set myvimrc 
+
+"==================================================
+"   key mappings:customized keys
+"==================================================
+"reset  from .vimrc
+noremap j j
+noremap k k
+noremap 0 0
+noremap ' '
+" Tweak ESC to be 'jk' typed fast
+imap jk <ESC>
+
+"nmap <Leader>r :tabedit $MYVIMRC<CR>
+nmap <leader>vb :vs ~/.vim/vimrc.bundles<cr>
+nmap <Leader>vl :edit ~/.vim/vimrc.local<cr>
+nmap <leader>vbl :edit ~/.vim/vimrc.bundles.local<cr>

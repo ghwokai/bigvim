@@ -256,12 +256,3 @@ highlight SpellLocal term=underline cterm=underline
 if filereadable(expand("~/.vim/vimrc.local"))
   source ~/.vim/vimrc.local
 endif
-"=======================================
-set mouse=a
-if has("gui_gtk2")
-    set guifont=DejaVu\ Sans\ Mono\ 12
-elseif has("gui_win32")
-    set guifont=DejaVu_Sans_Mono:h12
-end
-
-nmap <Leader>r :tabedit $MYVIMRC<CR>
