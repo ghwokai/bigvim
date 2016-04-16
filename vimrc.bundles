@@ -21,12 +21,16 @@ endif
 Plug 'Valloric/MatchTagAlways'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'gorodinskiy/vim-coloresque'
+" Plug 'gorodinskiy/vim-coloresque'
 Plug 'airblade/vim-gitgutter'
 Plug 'inside/vim-search-pulse'
 
+Plug 'kshenoy/vim-signature'
+Plug 'lilydjwg/colorizer'
+Plug 'Yggdroot/indentLine'
+
 " fast move
-Plug 'vim-scripts/matchit.zip'
+" Plug 'vim-scripts/matchit.zip'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'unblevable/quick-scope'
 
@@ -35,15 +39,19 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
 Plug 'gcmt/wildfire.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'alvan/vim-closetag'
+" Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'terryma/vim-multiple-cursors'
+" Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Chiel92/vim-autoformat', {'on': 'Autoformat'}
+
+"Plug 'tpope/vim-commentary'
+Plug 'ntpeters/vim-better-whitespace'
 
 " tools
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
@@ -53,10 +61,10 @@ Plug 'majutsushi/tagbar'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-obsession' | Plug 'dhruvasagar/vim-prosession'
 Plug 'szw/vim-maximizer'
-Plug 'thinca/vim-quickrun'
+"Plug 'thinca/vim-quickrun'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
-Plug 'ruanyl/vim-fidget', {'do': 'npm install'}
+"Plug 'ruanyl/vim-fidget', {'do': 'npm install'}
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'ruanyl/vim-fixmyjs', {'on': 'Fixmyjs'}
 Plug 'moll/vim-bbye'
@@ -79,19 +87,19 @@ Plug 'rking/ag.vim'
 Plug 'pangloss/vim-javascript', {'branch': 'develop'}
 Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'kchmck/vim-coffee-script'
+"Plug 'kchmck/vim-coffee-script'
 Plug 'heavenshell/vim-jsdoc', {'for': ['javascript', 'jsx']}
-Plug 'burnettk/vim-angular'
+"Plug 'burnettk/vim-angular'
 Plug 'mxw/vim-jsx'
 
 " PHP
-if count(g:bigvim_minor_plugins, 'php')
-    Plug 'StanAngeloff/php.vim', {'for': 'php'}
-    Plug 'mkusher/padawan.vim', {'for': 'php'}
-    Plug 'ruanyl/vim-php-manual', {'for': 'php'}
-    Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
-    Plug 'fantasyczl/blade-php-vim'
-endif
+"if count(g:bigvim_minor_plugins, 'php')
+    "Plug 'StanAngeloff/php.vim', {'for': 'php'}
+    "Plug 'mkusher/padawan.vim', {'for': 'php'}
+    "Plug 'ruanyl/vim-php-manual', {'for': 'php'}
+    "Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
+    "Plug 'fantasyczl/blade-php-vim'
+"endif
 
 " CSS
 if count(g:bigvim_minor_plugins, 'css')
@@ -109,12 +117,17 @@ call plug#end()
 " NERDTree
 " ----------------------------------------------------------------------------
 nnoremap <leader>e :NERDTreeToggle<CR>
-let NERDTreeHighlightCursorline=1
+" let NERDTreeHighlightCursorline=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
-
+"==================================================
+"   quick-scope config
+"==================================================
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_first_occurrence_highlight_color = '#D15B03' " gui vim
+let g:qs_second_occurrence_highlight_color = '#D40CDB'  " gui vim
 " ----------------------------------------------------------------------------
 " tagbar
 " require ctags, jsctags
@@ -165,6 +178,8 @@ nnoremap <leader><leader>/ :FuzzySearch<cr>
 " ----------------------------------------------------------------------------
 " vim-airline
 " ----------------------------------------------------------------------------
+let g:airline_theme='light'
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -186,8 +201,8 @@ let g:airline_symbols.readonly = '⭤'
  "" let g:airline_right_sep = '◀'
 let g:airline_symbols.crypt = '🔒'
   "let g:airline_symbols.linenr = '␊'
- "" let g:airline_symbols.linenr = '␤'
- "" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
   "let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
   "let g:airline_symbols.paste = 'Þ'
@@ -195,6 +210,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
+
 " ----------------------------------------------------------------------------
 " vim-trailing-whitespace
 " Mapping: <leader><space>
@@ -216,7 +232,7 @@ nnoremap <Leader>x :BookmarkClearAll<CR>
 " ----------------------------------------------------------------------------
 " vim-maximizer
 " ----------------------------------------------------------------------------
-nnoremap <tab> :MaximizerToggle<CR>
+" nnoremap <tab> :MaximizerToggle<CR>
 
 " ----------------------------------------------------------------------------
 " vim-colors-solarized
@@ -229,11 +245,25 @@ let g:solarized_visibility="high"
 " ----------------------------------------------------------------------------
 " vim-easymotion
 " ----------------------------------------------------------------------------
-map <space> <Plug>(easymotion-s2)
+" map <space> <Plug>(easymotion-s2)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 let g:EasyMotion_smartcase = 1
 
+"==================================================
+"    easymotion config
+"==================================================
+map <Leader><leader>h <Plug>(easymotion-linebackward)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
+map <Leader><leader>. <Plug>(easymotion-repeat)
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+" Move to line
+map <Leader><Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 " ----------------------------------------------------------------------------
 " wildfire.vim
 " Mapping: <Enter>
@@ -361,3 +391,10 @@ nnoremap qq :Bdelete<cr>
 " BufOnly.vim
 " ----------------------------------------------------------------------------
 nnoremap <silent> qo :BufOnly<CR>
+"==================================================
+"    emmet config
+"==================================================
+let g:user_emmet_leader_key='<C-e>' " c-e , 连打，注意逗号别忘记
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+autocmd FileType css,html imap <tab> <plug>(emmet-expand-abbr)

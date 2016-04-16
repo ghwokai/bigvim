@@ -1,11 +1,5 @@
 " in order to make your local setting works
 " copy this file and rename it as vimrc.local
 " add your vimrc configurations here
+" display
 
-"==================================================
-"    emmet config
-"==================================================
-let g:user_emmet_leader_key='<C-e>' " c-e , 连打，注意逗号别忘记
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-autocmd FileType css,html imap <tab> <plug>(emmet-expand-abbr)
