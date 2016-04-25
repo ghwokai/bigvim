@@ -3,5 +3,5 @@ bundle/*
 *.bak
 *.bk
 .DS_Store
-autoload/
-session/
+autoload/*
+session/*
