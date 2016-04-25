@@ -19,8 +19,8 @@ filetype plugin indent on
 syntax enable
 syntax on
 
-colorscheme solarized
-"colorscheme molokai
+"colorscheme solarized
+colorscheme molokai
 "colorscheme desert
 
 set background=dark
@@ -30,7 +30,7 @@ set autoread              " auto reload file after being modified
 set shortmess=atI         " do not show initial page
 set nobackup
 set noswapfile
-set cursorcolumn          " highlight current column
+" set cursorcolumn          " highlight current column
 set cursorline            " highlight current line
 set t_ti= t_te=           " alway show the content on the screen after exist VIM
 set mouse-=a              " disable mouse
@@ -99,11 +99,11 @@ set viminfo^=% " Remember info about open buffers on close
 set magic      " For regular expressions turn magic on
 
 set backspace=eol,start,indent               " Configure backspace so it acts as it should act
-set whichwrap+=<,>,h,l
-set pastetoggle=<F5>                         " when in insert mode, toggle between 'paste' and 'nopaste'
+" set whichwrap+=<,>,h,l
+" set pastetoggle=<F5>                         " when in insert mode, toggle between 'paste' and 'nopaste'
 
 "let &colorcolumn="80,".join(range(120,999),",")
-let &colorcolumn="80"
+" let &colorcolumn="80"
 
 autocmd InsertEnter * :set norelativenumber " no relativenumber in insert mode
 autocmd InsertLeave * :set relativenumber   " show relativenumber when leave insert mode
@@ -140,8 +140,8 @@ inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType javascript,json,css,scss,html set tabstop=2 shiftwidth=2 expandtab ai
+" autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
+" autocmd FileType javascript,json,css,scss,html set tabstop=2 shiftwidth=2 expandtab ai
 
 autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
 
@@ -156,7 +156,7 @@ nnoremap <silent> ( g;
 nnoremap <silent> ) g,
 
 "replace currently selected text with default register without yanking it
-vnoremap p "_dP
+" vnoremap p "_dP
 
 " use ctrl-c to copy to system clipboard
 vnoremap <C-c> "*y
@@ -165,8 +165,8 @@ vnoremap <C-c> "*y
 inoremap <C-V> <C-R>"
 
 "Treat long lines as break lines (useful when moving around in them)
-noremap j gj
-noremap k gk
+" noremap j gj
+" noremap k gk
 
 " better command line editing
 cnoremap <C-j> <t_kd>
@@ -181,25 +181,25 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
 " Go to home and end using capitalized directions
-noremap H 0
-noremap L $
-noremap Y y$
+" noremap H 0
+" noremap L $
+" noremap Y y$
 
 " Remap VIM 0 to first non-blank character
-noremap 0 ^
+" noremap 0 ^
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 "no Highlight
-noremap <silent><leader>/ :nohls<CR>
+" noremap <silent><leader>/ :nohls<CR>
 
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>"
 
 nnoremap ; :
-nnoremap ' :b
+" nnoremap ' :b
 
 "Keep search pattern at the center of the screen."
 nnoremap <silent> n nzz
@@ -209,8 +209,8 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
 "Use 'm/M' to move among buffers
-noremap m :bn<CR>
-noremap M :bp<CR>
+" noremap m :bn<CR>
+" noremap M :bp<CR>
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
@@ -218,11 +218,11 @@ nnoremap U <C-r>
 " select all
 noremap <Leader>sa ggVG"
 
-nnoremap dp :diffput<CR>
-nnoremap dg :diffget<CR>
+" nnoremap dp :diffput<CR>
+" nnoremap dg :diffget<CR>
 
 " toggle between two buffers
-nnoremap t <C-^>
+" nnoremap t <C-^>
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vnoremap < <gv
