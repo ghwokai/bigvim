@@ -12,9 +12,10 @@ badd +409 ~/.bigvim/vimrc.bundles
 badd +55 ~/.bigvim/vimrc.local
 badd +28 ~/.bigvim/vimrc
 badd +1 test.js
+badd +0 ~/.bigvim/.gitignore
 argglobal
 silent! argdel *
-edit test.js
+edit ~/.bigvim/.gitignore
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -29,12 +30,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
+let s:l = 8 - ((7 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+8
+normal! 024|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

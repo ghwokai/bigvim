@@ -5,3 +5,4 @@ bundle/*
 .DS_Store
 autoload/*
 session/*
+session/%home%breeze.vim
